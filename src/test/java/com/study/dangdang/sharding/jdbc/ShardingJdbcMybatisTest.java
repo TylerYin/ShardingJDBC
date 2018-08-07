@@ -35,7 +35,7 @@ public class ShardingJdbcMybatisTest {
             u = new User();
             u.setUserId(i);
             u.setAge(i);
-            u.setName("zhang san " + i);
+            u.setName("Zhang San " + i);
             Assert.assertEquals(userService.insert(u), true);
         }
     }
@@ -47,7 +47,7 @@ public class ShardingJdbcMybatisTest {
             student = new Student();
             student.setStudentId(i);
             student.setAge(i);
-            student.setName("li si " + i);
+            student.setName("Li Si " + i);
             Assert.assertEquals(studentService.insert(student), true);
         }
     }
