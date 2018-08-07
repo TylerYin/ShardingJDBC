@@ -26,7 +26,6 @@ public class StudentSingleKeyTableShardingAlgorithm implements SingleKeyTableSha
         for (String each : tableNames) {
             rand = new Random(System.currentTimeMillis());
             if (each.endsWith((shardingValue.getValue() + rand.nextInt(2)) % 2 + "")) {
-                System.out.println("===========" + each);
                 return each;
             }
         }
