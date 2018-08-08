@@ -74,6 +74,7 @@
             <list>
                 <value>t_student_0</value>
                 <value>t_student_1</value>
+                <value>t_student_2</value>
             </list>
         </constructor-arg>
         <constructor-arg index="2" ref="dataSourceRule"/>
