@@ -43,7 +43,7 @@ public class UserSingleKeyTableShardingAlgorithm implements SingleKeyTableShardi
     public Collection<String> doBetweenSharding(Collection<String> tableNames,
             ShardingValue<Integer> shardingValue) {
         Collection<String> result = new LinkedHashSet<String>(tableNames.size());
-        Range<Integer> range = (Range<Integer>) shardingValue.getValueRange();
+        Range<Integer> range = shardingValue.getValueRange();
         for (Integer i = range.lowerEndpoint(); i <= range.upperEndpoint(); i++) {
             for (String each : tableNames) {
                 if (each.endsWith(i % 3 + "")) {

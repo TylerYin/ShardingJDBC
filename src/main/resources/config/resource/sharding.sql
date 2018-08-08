@@ -36,6 +36,15 @@ CREATE TABLE `t_student_1` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `t_student_2`;
+CREATE TABLE `t_student_2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
 DROP TABLE IF EXISTS `t_user_0`;
 CREATE TABLE `t_user_0` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
