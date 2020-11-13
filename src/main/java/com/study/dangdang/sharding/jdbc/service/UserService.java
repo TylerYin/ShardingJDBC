@@ -5,15 +5,15 @@ import java.util.List;
 import com.study.dangdang.sharding.jdbc.entity.User;
 
 public interface UserService {
-    
-    public boolean insert(User u);
-    
-    public List<User> findAll();
-    
-    public List<User> findByUserIds(List<Integer> ids);
-    
-    public void transactionTestSucess();
-    
-    public void transactionTestFailure() throws IllegalAccessException;
+
+    boolean insert(User u);
+
+    List<User> findAll();
+
+    List<User> findByUserIds(List<Integer> ids);
+
+    void transactionTestSucess();
+
+    void transactionTestFailure() throws IllegalAccessException;
 
 }
