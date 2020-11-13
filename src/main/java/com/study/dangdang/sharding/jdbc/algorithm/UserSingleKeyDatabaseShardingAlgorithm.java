@@ -15,7 +15,7 @@ import com.google.common.collect.Range;
 public class UserSingleKeyDatabaseShardingAlgorithm implements SingleKeyDatabaseShardingAlgorithm<Integer>{
 
     /**
-     * sql 中关键字 匹配符为 =的时候，表的路由函数
+     * sql 中关键字 匹配符为 = 的时候，表的路由函数
      */
     public String doEqualSharding(Collection<String> availableTargetNames, ShardingValue<Integer> shardingValue) {
         for (String each : availableTargetNames) {
@@ -44,10 +44,9 @@ public class UserSingleKeyDatabaseShardingAlgorithm implements SingleKeyDatabase
     /**
      * sql 中关键字 匹配符为 between的时候，表的路由函数
      */
-    public Collection<String> doBetweenSharding(Collection<String> availableTargetNames,
-            ShardingValue<Integer> shardingValue) {
+    public Collection<String> doBetweenSharding(Collection<String> availableTargetNames, ShardingValue<Integer> shardingValue) {
         Collection<String> result = new LinkedHashSet<String>(availableTargetNames.size());
-        Range<Integer> range = (Range<Integer>) shardingValue.getValueRange();
+        Range<Integer> range = shardingValue.getValueRange();
         for (Integer i = range.lowerEndpoint(); i <= range.upperEndpoint(); i++) {
             for (String each : availableTargetNames) {
                 if (each.endsWith(i % 2 + "")) {

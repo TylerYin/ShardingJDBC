@@ -8,7 +8,7 @@ import com.dangdang.ddframe.rdb.sharding.api.strategy.table.SingleKeyTableShardi
 import com.google.common.collect.Range;
 
 /**
- * 因为t_student实际表在每个库中只有2个，所以 %2
+ * 因为t_student实际表在每个库中只有3个，所以%3
  *
  * @author lyncc
  */
@@ -17,7 +17,6 @@ public class StudentSingleKeyTableShardingAlgorithm implements SingleKeyTableSha
     /**
      * sql 中 = 操作时，table的映射
      */
-
     public String doEqualSharding(Collection<String> tableNames, ShardingValue<Integer> shardingValue) {
         for (String each : tableNames) {
             if (each.endsWith((shardingValue.getValue()) % 3 + "")) {

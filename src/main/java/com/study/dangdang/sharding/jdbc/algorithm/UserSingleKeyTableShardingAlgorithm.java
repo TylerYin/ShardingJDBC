@@ -12,7 +12,6 @@ public class UserSingleKeyTableShardingAlgorithm implements SingleKeyTableShardi
     /**
      * sql 中 = 操作时，table的映射
      */
-
     public String doEqualSharding(Collection<String> tableNames, ShardingValue<Integer> shardingValue) {
         for (String each : tableNames) {
             if (each.endsWith(shardingValue.getValue() % 3 + "")) {
@@ -40,8 +39,7 @@ public class UserSingleKeyTableShardingAlgorithm implements SingleKeyTableShardi
     /**
      * sql 中 between 操作时，table的映射
      */
-    public Collection<String> doBetweenSharding(Collection<String> tableNames,
-            ShardingValue<Integer> shardingValue) {
+    public Collection<String> doBetweenSharding(Collection<String> tableNames, ShardingValue<Integer> shardingValue) {
         Collection<String> result = new LinkedHashSet<String>(tableNames.size());
         Range<Integer> range = shardingValue.getValueRange();
         for (Integer i = range.lowerEndpoint(); i <= range.upperEndpoint(); i++) {
@@ -53,5 +51,4 @@ public class UserSingleKeyTableShardingAlgorithm implements SingleKeyTableShardi
         }
         return result;
     }
-
 }
